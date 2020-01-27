@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+pg_dumpall -U "$POSTGRES_USER" -f postgres.sql
+
+cat > "$1" <<EOF
+P sh
+R $(pwd)
++ postgres.sql
+EOF

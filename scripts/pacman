@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+pacman -Q > pacman_installed.txt
+
+cat > "$1" <<EOF
+P sh
+R $(pwd)
++ pacman_installed.txt
+EOF

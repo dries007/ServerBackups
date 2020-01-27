@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+mysqldump -u"$MYSQL_USER" -p"$MYSQL_PASS" --single-transaction --routines --triggers --all-databases > mysql.sql
+
+cat > "$1" <<EOF
+P sh
+R $(pwd)
++ mysql.sql
+EOF

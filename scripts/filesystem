@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+cat > "$1" <<EOF
+P sh
+R /
+! **/.cache/
+! **/tmp/
+! **/Trash/
+! **/.gvfs/
+! **/.npm/
+! **/.gradle/
+! **/.git/
+! **/node_modules/
+! **/__pychache__/
+- **/*.pyc
+- **/*.venv*/
+- **/*venv*/
++ /etc/
++ /home/dries
+- /home/minecraft
++ /home/*
++ /root
++ /opt
+- /srv/http/dl
++ /srv
+- /var/lib/docker/image/overlay2
+- /var/lib/docker/overlay2
++ /var/lib/docker
+EOF

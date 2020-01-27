@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+influxd backup -portable influx
+
+cat > "$1" <<EOF
+P sh
+R $(pwd)
++ influx/
+EOF
